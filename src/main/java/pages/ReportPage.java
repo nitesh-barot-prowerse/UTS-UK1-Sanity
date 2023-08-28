@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class ReportPage {
@@ -199,7 +200,7 @@ public class ReportPage {
     }
 
     public int fetchSections() {
-        WebDriverWait cWait = new WebDriverWait(driver, 10);
+        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> totalColumn = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='ibox']/div/div")));
         int size = totalColumn.size();
         return size;
@@ -230,252 +231,252 @@ public class ReportPage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-       // driver.findElement(reportIcon).click();
+        driver.findElement(reportIcon).click();
 
 
         //Client
-//        if (driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[1]")).isEnabled()) {
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[1]")).click();
-//        } else {
-//            try {
-//                Thread.sleep(3000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[1]")).click();
-//        }
-//        try {
-//            Thread.sleep(3000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        System.out.println(driver.getCurrentUrl());
-//        try {
-//            Thread.sleep(500);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        driver.findElement(reportIcon).click();
-//
-//
-//        if (driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[2]")).isEnabled()) {
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[2]")).click();
-//        } else {
-//            try {
-//                Thread.sleep(3000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[2]")).click();
-//        }
-//        try {
-//            Thread.sleep(3000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        System.out.println(driver.getCurrentUrl());
-//        try {
-//            Thread.sleep(500);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        driver.findElement(reportIcon).click();
-//
-//        if (driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[3]")).isEnabled()) {
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[3]")).click();
-//        } else {
-//            try {
-//                Thread.sleep(3000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[3]")).click();
-//        }
-//        try {
-//            Thread.sleep(3000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        System.out.println(driver.getCurrentUrl());
-//        try {
-//            Thread.sleep(500);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        driver.findElement(reportIcon).click();
-//
-//
-//        if (driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[4]")).isEnabled()) {
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[4]")).click();
-//        } else {
-//            try {
-//                Thread.sleep(3000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[4]")).click();
-//        }
-//        try {
-//            Thread.sleep(3000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        System.out.println(driver.getCurrentUrl());
-//        try {
-//            Thread.sleep(500);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        driver.findElement(reportIcon).click();
+        if (driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[1]")).isEnabled()) {
+            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[1]")).click();
+        } else {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[1]")).click();
+        }
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(driver.getCurrentUrl());
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.findElement(reportIcon).click();
 
-//        //Policy
-//
-//        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[1]")).isEnabled()) {
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[1]")).click();
-//        } else {
-//            try {
-//                Thread.sleep(3000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[1]")).click();
-//        }
-//        try {
-//            Thread.sleep(3000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        System.out.println(driver.getCurrentUrl());
-//        try {
-//            Thread.sleep(500);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        driver.findElement(reportIcon).click();
-//
-//
-//        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[2]")).isEnabled()) {
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[2]")).click();
-//        } else {
-//            try {
-//                Thread.sleep(3000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[2]")).click();
-//        }
-//        try {
-//            Thread.sleep(3000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        System.out.println(driver.getCurrentUrl());
-//        try {
-//            Thread.sleep(500);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        driver.findElement(reportIcon).click();
-//
-//
-//        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[3]")).isEnabled()) {
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[3]")).click();
-//        } else {
-//            try {
-//                Thread.sleep(3000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[3]")).click();
-//        }
-//        try {
-//            Thread.sleep(3000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        System.out.println(driver.getCurrentUrl());
-//        try {
-//            Thread.sleep(500);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        driver.findElement(reportIcon).click();
-//
-//        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[6]")).isEnabled()) {
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[6]")).click();
-//        } else {
-//            try {
-//                Thread.sleep(3000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[6]")).click();
-//        }
-//        try {
-//            Thread.sleep(3000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        System.out.println(driver.getCurrentUrl());
-//        try {
-//            Thread.sleep(500);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        driver.findElement(reportIcon).click();
-//
-//
-//        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[7]")).isEnabled()) {
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[7]")).click();
-//        } else {
-//            try {
-//                Thread.sleep(3000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[7]")).click();
-//        }
-//        try {
-//            Thread.sleep(3000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        System.out.println(driver.getCurrentUrl());
-//        try {
-//            Thread.sleep(500);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        driver.findElement(reportIcon).click();
+
+        if (driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[2]")).isEnabled()) {
+            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[2]")).click();
+        } else {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[2]")).click();
+        }
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(driver.getCurrentUrl());
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.findElement(reportIcon).click();
+
+        if (driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[3]")).isEnabled()) {
+            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[3]")).click();
+        } else {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[3]")).click();
+        }
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(driver.getCurrentUrl());
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.findElement(reportIcon).click();
+
+
+        if (driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[4]")).isEnabled()) {
+            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[4]")).click();
+        } else {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[4]")).click();
+        }
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(driver.getCurrentUrl());
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.findElement(reportIcon).click();
+
+        //Policy
+
+        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[1]")).isEnabled()) {
+            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[1]")).click();
+        } else {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[1]")).click();
+        }
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(driver.getCurrentUrl());
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.findElement(reportIcon).click();
+
+
+        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[2]")).isEnabled()) {
+            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[2]")).click();
+        } else {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[2]")).click();
+        }
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(driver.getCurrentUrl());
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.findElement(reportIcon).click();
+
+
+        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[3]")).isEnabled()) {
+            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[3]")).click();
+        } else {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[3]")).click();
+        }
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(driver.getCurrentUrl());
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.findElement(reportIcon).click();
+
+        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[6]")).isEnabled()) {
+            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[6]")).click();
+        } else {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[6]")).click();
+        }
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(driver.getCurrentUrl());
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.findElement(reportIcon).click();
+
+
+        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[7]")).isEnabled()) {
+            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[7]")).click();
+        } else {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[7]")).click();
+        }
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(driver.getCurrentUrl());
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.findElement(reportIcon).click();
 
 
 
         //Claim
 
-//        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[2]/div/div[2]/a[1]")).isEnabled()) {
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[2]/div/div[2]/a[1]")).click();
-//        } else {
-//            try {
-//                Thread.sleep(3000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[2]/div/div[2]/a[1]")).click();
-//        }
-//        try {
-//            Thread.sleep(3000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        System.out.println(driver.getCurrentUrl());
-//        try {
-//            Thread.sleep(500);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-      //  driver.findElement(reportIcon).click();
+        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[2]/div/div[2]/a[1]")).isEnabled()) {
+            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[2]/div/div[2]/a[1]")).click();
+        } else {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[2]/div/div[2]/a[1]")).click();
+        }
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(driver.getCurrentUrl());
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.findElement(reportIcon).click();
 
-
+//
 //        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[2]/div/div[2]/a[2]")).isEnabled()) {
 //            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[2]/div/div[2]/a[2]")).click();
 //        } else {
@@ -733,7 +734,7 @@ public class ReportPage {
     // Filter quote report information upon options value of quote status and quote from drop downs
 
     public void clickOnQuoteReportIcon() {
-        WebDriverWait cWait = new WebDriverWait(driver, 10);
+        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement quoteIcon = cWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='ibox']/div[1]/div[1]/div/div[2]/a")));
         quoteIcon.click();
         try {
@@ -773,7 +774,7 @@ public class ReportPage {
     }
 
     public String verifyQuoteReportData() {
-        WebDriverWait cWait = new WebDriverWait(driver, 10);
+        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> quoteDetails = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='wrapper wrapper-content']/div/div/table/tbody/tr[1]/td")));
         String details = " ";
         for (WebElement cLE : quoteDetails) {
@@ -838,7 +839,7 @@ public class ReportPage {
     }
 
     public String verifyPolicySummaryReportData() {
-        WebDriverWait cWait = new WebDriverWait(driver, 10);
+        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> policySummaryDetails = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='wrapper wrapper-content']/div/div/table/tbody/tr")));
         String details = " ";
         for (WebElement cLE : policySummaryDetails) {
@@ -863,7 +864,7 @@ public class ReportPage {
     }
 
     public String verifyPolicySummaryReportDataUponStatusDD() {
-        WebDriverWait cWait = new WebDriverWait(driver, 10);
+        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> policySummaryDetails = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='wrapper wrapper-content']/div/div/table/tbody/tr")));
         String details = " ";
         for (WebElement cLE : policySummaryDetails) {
@@ -897,7 +898,7 @@ public class ReportPage {
     }
 
     public String verifyPolicySummaryReportDataUponSortBYDD() {
-        WebDriverWait cWait = new WebDriverWait(driver, 10);
+        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> policySummaryDetails = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='wrapper wrapper-content']/div/div/table/tbody/tr")));
         String details = " ";
         for (WebElement cLE : policySummaryDetails) {
@@ -950,7 +951,7 @@ public class ReportPage {
     }
 
     public String verifyPolicyHistoryReportData() {
-        WebDriverWait cWait = new WebDriverWait(driver, 10);
+        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> policyHistoryDetails = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='ibox-grid']/div/table/tbody/tr")));
         String details = " ";
         for (WebElement cLE : policyHistoryDetails) {
@@ -995,7 +996,7 @@ public class ReportPage {
     }
 
     public String verifyActivePolicyReportData() {
-        WebDriverWait cWait = new WebDriverWait(driver, 10);
+        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> activePolicyDetails = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='wrapper wrapper-content']/div/div/table/tbody/tr")));
         String details = " ";
         for (WebElement cLE : activePolicyDetails) {
@@ -1124,7 +1125,7 @@ public class ReportPage {
     }
 
     public String verifyUnallocatedBalanceReportData() {
-        WebDriverWait cWait = new WebDriverWait(driver, 10);
+        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> unallocatedReportDetails = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='wrapper wrapper-content']/div/div/table/tbody/tr")));
         String details = " ";
         for (WebElement cLE : unallocatedReportDetails) {
@@ -1171,7 +1172,7 @@ public class ReportPage {
     }
 
     public String verifyPolicyCancellationReportData() {
-        WebDriverWait cWait = new WebDriverWait(driver, 10);
+        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> policyCancellationDetails = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='wrapper wrapper-content']/div/div/table/tbody/tr")));
         String details = " ";
         for (WebElement cLE : policyCancellationDetails) {
@@ -1245,7 +1246,7 @@ public class ReportPage {
     }
 
     public String verifyOutstandingClaimData() {
-        WebDriverWait cWait = new WebDriverWait(driver, 10);
+        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> outstandingClaimDetails = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='wrapper wrapper-content']/div/div/table/tbody/tr")));
         String details = " ";
         for (WebElement cLE : outstandingClaimDetails) {
@@ -1279,7 +1280,7 @@ public class ReportPage {
     }
 
     public String verifyOutstandingClaimDataUponSorting() {
-        WebDriverWait cWait = new WebDriverWait(driver, 10);
+        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> outstandingClaimDetails = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='wrapper wrapper-content']/div/div/table/tbody/tr")));
         String details = " ";
         for (WebElement cLE : outstandingClaimDetails) {
@@ -1326,7 +1327,7 @@ public class ReportPage {
     }
 
     public String verifyRefundReportData() {
-        WebDriverWait cWait = new WebDriverWait(driver, 10);
+        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> refundReportDetails = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='wrapper wrapper-content']/div/div/table/tbody/tr")));
         String details = " ";
         for (WebElement cLE : refundReportDetails) {
@@ -1397,7 +1398,7 @@ public class ReportPage {
     }
 
     public String verifyAgentListPageData() {
-        WebDriverWait cWait = new WebDriverWait(driver, 10);
+        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> agentListDetails = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='wrapper wrapper-content']/div/div/table/tbody/tr")));
         String details = " ";
         for (WebElement cLE : agentListDetails) {

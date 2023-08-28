@@ -231,7 +231,7 @@ public class ClientPage {
     }
 
     public String fetchAndDisplayData() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> totalRow = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
         String array = " ";
         for (WebElement rEle : totalRow) {
@@ -260,7 +260,7 @@ public class ClientPage {
     }
 
     public String verifyClient() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> clientInfo = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td[2]")));
         String clientCode = " ";
         for (WebElement client : clientInfo) {
@@ -281,7 +281,7 @@ public class ClientPage {
     }
 
     public void clickClientCode() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> clientInfo = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td[2]")));
         for (WebElement client : clientInfo) {
             client.click();
@@ -307,7 +307,7 @@ public class ClientPage {
     //view client page should displays with all details for each client code link on manage client page
 
     public String clickOnClientCodeOnManageClient() {
-        WebDriverWait cWait = new WebDriverWait(driver, 10);
+        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> totalColumn = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td[2]/a")));
 
         String displayMessage = " ";
@@ -502,7 +502,7 @@ public class ClientPage {
     //To check whether add quote page is displays for same user by clicking on add button on view client page
     public String clickClientCodeToGetClientNumber() {
 
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement clientInfo = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='gridName']/table/tbody/tr[1]/td[2]")));
         String clientNumber = clientInfo.getText();
         System.out.println(clientNumber);
@@ -697,7 +697,7 @@ public class ClientPage {
 //Add contact details of client
 
     public void openViewClient() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='gridName']/table/tbody/tr[1]/td[2]")));
         element.click();
         try {
@@ -1005,7 +1005,7 @@ public class ClientPage {
     }
 
     public void clickONClientCode() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> clientInfo = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr[1]/td[2]")));
         for (WebElement client : clientInfo) {
             client.click();

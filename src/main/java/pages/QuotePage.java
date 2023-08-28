@@ -107,7 +107,7 @@ public class QuotePage {
     }
 
     public String fetchAndDisplayedData() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> totalRow = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
         String array = " ";
         for (WebElement rEle : totalRow) {
@@ -117,7 +117,7 @@ public class QuotePage {
     }
 
     public String verifyQuoteDateColumnForamt() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> quoteDateColumn = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[3]")));
         String date = "";
         for (WebElement quoteDate : quoteDateColumn) {
@@ -129,7 +129,7 @@ public class QuotePage {
     }
 
     public String verifyExpireDateColumnFormat() {
-        WebDriverWait eWait = new WebDriverWait(driver, 10);
+        WebDriverWait eWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> expireDateColumn = eWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[4]")));
         String date = "";
         for (WebElement expireDate : expireDateColumn) {
@@ -166,7 +166,7 @@ public class QuotePage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> yearlyPremiumColum = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[13]")));
         String yPremium = " ";
         for (WebElement amountP : yearlyPremiumColum) {
@@ -176,7 +176,7 @@ public class QuotePage {
     }
 
     public String verifyMonthlyPremiumColumn() {
-        WebDriverWait mWait = new WebDriverWait(driver, 10);
+        WebDriverWait mWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> monthlyPremiumColumn = mWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[14]")));
         String yPremium = " ";
         for (WebElement amountP : monthlyPremiumColumn) {
@@ -197,7 +197,7 @@ public class QuotePage {
     }
 
     public String verifyDataOnMicrochipPage() {
-        WebDriverWait rWait = new WebDriverWait(driver, 10);
+        WebDriverWait rWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> totalRow = rWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='MicrochipFileUploadAuditGrid']/table/tbody/tr")));
         String data = " ";
         for (WebElement rEle : totalRow) {
@@ -218,7 +218,7 @@ public class QuotePage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> pList = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("ul[id='PrimaryProductId_listbox']>li")));
         System.out.println(pList.size());
 
@@ -232,7 +232,7 @@ public class QuotePage {
     }
 
     public String fetchDataOfQuoteInformation() {
-        WebDriverWait cWait = new WebDriverWait(driver, 10);
+        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> totalColumn = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[2]/a")));
         String displayMessage = " ";
         for (WebElement cEle : totalColumn) {
@@ -273,7 +273,7 @@ public class QuotePage {
     }
 
     public String fetchAndVerifyDataAgainstDropDown() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> totalRow = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
         String array = " ";
         for (WebElement rEle : totalRow) {
@@ -310,7 +310,7 @@ public class QuotePage {
     }
 
     public List<WebElement> verifyListOfQuoteBasedOnProductDD() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> listOfProduct = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
         return listOfProduct;
 
@@ -365,7 +365,7 @@ public class QuotePage {
     }
 
     public String verifyQuoteDetails() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement quoteInfo = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='gridName']/table/tbody/tr[1]")));
         return quoteInfo.getText();
     }

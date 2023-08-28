@@ -149,9 +149,9 @@ public class AdminPage {
 
     private By displayedMessageOnAddInsurerPage = By.xpath("//div[@class='row wrapper border-bottom white-bg page-heading']/div/h2");
 
-    private By editIconOfInsurer=By.xpath("//div[@id='gridName']/table/tbody/tr[1]/td[14]/div/a[1]");
+    private By editIconOfInsurer = By.xpath("//div[@id='gridName']/table/tbody/tr[1]/td[14]/div/a[1]");
 
-    private By displayedMessageOnEditInsurerPage=By.xpath("//div[@class='row wrapper border-bottom white-bg page-heading']/div/h2");
+    private By displayedMessageOnEditInsurerPage = By.xpath("//div[@class='row wrapper border-bottom white-bg page-heading']/div/h2");
 
     //Agent Page
     private By agentIcon = By.xpath("//div[@class='ibox-content']/div/div[6]/a/i");
@@ -216,7 +216,7 @@ public class AdminPage {
 
 
     public String fetchData() {
-        WebDriverWait waitR = new WebDriverWait(driver, 10);
+        WebDriverWait waitR = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> totalRow = waitR.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
         String data = " ";
         for (WebElement trRow : totalRow) {
@@ -226,7 +226,7 @@ public class AdminPage {
     }
 
     public void clickOnAddLetterTemplateIcon() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> totalHead = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(editLetterTemplateButton));
         for (WebElement thHead : totalHead) {
             thHead.click();
@@ -253,7 +253,7 @@ public class AdminPage {
 
         ((JavascriptExecutor) driver).executeScript("document.getElementById('DisplayOrder').style.display='block';");
         WebElement element = driver.findElement(By.id("DisplayOrder"));
-        WebDriverWait wait1 = new WebDriverWait(driver, 10);
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
         String order = "23";
         wait1.until(ExpectedConditions.visibilityOf(element)).sendKeys(order);
         try {
@@ -262,7 +262,7 @@ public class AdminPage {
             throw new RuntimeException(e);
         }
 
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(subjectField)).clear();
         driver.findElement(subjectField).sendKeys("Testing Purpose");
         try {
@@ -273,7 +273,7 @@ public class AdminPage {
     }
 
     public void traversingThroughPages() {
-        WebDriverWait cWait = new WebDriverWait(driver, 10);
+        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> totalColumn = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='ibox-content']/div/div/a")));
         String product = driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[1]/a")).getText();
         if (product.contains("Run Scheduler") || product.contains("Email Logs")) {
@@ -403,7 +403,8 @@ public class AdminPage {
             System.out.println(driver.getCurrentUrl());
             driver.findElement(adminIcon).click();
         }
-        String PromoCode = driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[10]/a")).getText();
+    }
+       /* String PromoCode = driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[10]/a")).getText();
         if (PromoCode.contains("Run Scheduler") || PromoCode.contains("Email Logs")) {
             System.out.println("Do Nothing");
 
@@ -979,141 +980,142 @@ public class AdminPage {
         }
         driver.findElement(optionFromCategoryDropDownOnManageAgentPage).click();*/
 
-        driver.findElement(categoryDropDownOnManageAgentPage).click();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(optionFromTypeDropDownOnManageAgentPage).click();
+//        driver.findElement(categoryDropDownOnManageAgentPage).click();
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//        driver.findElement(optionFromTypeDropDownOnManageAgentPage).click();
+//
+//        driver.findElement(typeDropDownOnManageAgentPage).click();
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//        driver.findElement(optionFromActiveDropDownOnManageAgentPage).click();
 
-        driver.findElement(typeDropDownOnManageAgentPage).click();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(optionFromActiveDropDownOnManageAgentPage).click();
 
+//    }
+//
+//    public void clickOnButtonOnManageAgentPage() {
+//        driver.findElement(searchButtonOnManageAgentPage).click();
+//        try {
+//            Thread.sleep(3000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//
+//    }
+//
+//    public String verifyDetailsOfAgentList() {
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        List<WebElement> agentDetails = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
+//        String data = " ";
+//        for (WebElement details : agentDetails) {
+//            data = details.getText() + data;
+//        }
+//        return data;
+//
+//    }
+//
+//
+//    //Add agent page displays with all details by clicking on add agent button on manage agent page
+//
+//    public void clickOnAddAgentButton() {
+//        driver.findElement(addAgentButtonOnManageAgentPage).click();
+//        try {
+//            Thread.sleep(3000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
+//
+//    public String verifyAddAgentPage() {
+//        return driver.findElement(displayedMessageOnAddAgentPage).getText();
+//
+//    }
+//
+//
+//    //Manage Company page displays with list of companies by clicking on company icon on administration page
+//
+//    public void clickOnCompanyIcon() {
+//        driver.findElement(companyIcon).click();
+//        try {
+//            Thread.sleep(3000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
+//
+//    public String fetchAndDisplaysManageCompanyDetails() {
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        List<WebElement> companyDetails = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td")));
+//        String companyDetail = " ";
+//        for (WebElement company : companyDetails) {
+//            companyDetail = companyDetail + company.getText();
+//
+//        }
+//        return companyDetail;
+//    }
+//
+//    //Filter details on manage company page upon option of state and country drop down
+//
+//    public void selectOptionsFromDropDownOnManageCompany() {
+//        driver.findElement(stateDropDownOnManageCompanyPage).click();
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//        driver.findElement(optionFromStateDropDownOnManageCompanyPage).click();
+//
+//        driver.findElement(countryDropDownOnManageCompanyPage).click();
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//        driver.findElement(optionFromCountryDropDownOnManageCompanyPage).click();
+//        driver.findElement(searchButtonOnManageCompanyPage).click();
+//        try {
+//            Thread.sleep(3000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//
+//    }
+//
+//    public String verifyDetailsOfCompany() {
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        List<WebElement> companyList = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td")));
+//        String data = " ";
+//        for (WebElement details : companyList) {
+//            data = details.getText() + data;
+//        }
+//        return data;
+//
+//    }
+//
+//    //Add company page displays with all details by clicking on add company button on manage company page
+//
+//    public void clickOnAddCompanyButton() {
+//        driver.findElement(addCompanyButtonOnManageCompanyPage).click();
+//        try {
+//            Thread.sleep(3000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
+//
+//    public String verifyAddCompanyPage() {
+//        return driver.findElement(displayedMessageOnAddCompanyPage).getText();
+//
+//    }
 
     }
 
-    public void clickOnButtonOnManageAgentPage() {
-        driver.findElement(searchButtonOnManageAgentPage).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
-
-    public String verifyDetailsOfAgentList() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        List<WebElement> agentDetails = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String data = " ";
-        for (WebElement details : agentDetails) {
-            data = details.getText() + data;
-        }
-        return data;
-
-    }
-
-
-    //Add agent page displays with all details by clicking on add agent button on manage agent page
-
-    public void clickOnAddAgentButton() {
-        driver.findElement(addAgentButtonOnManageAgentPage).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public String verifyAddAgentPage() {
-        return driver.findElement(displayedMessageOnAddAgentPage).getText();
-
-    }
-
-
-    //Manage Company page displays with list of companies by clicking on company icon on administration page
-
-    public void clickOnCompanyIcon() {
-        driver.findElement(companyIcon).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public String fetchAndDisplaysManageCompanyDetails() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        List<WebElement> companyDetails = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td")));
-        String companyDetail = " ";
-        for (WebElement company : companyDetails) {
-            companyDetail = companyDetail + company.getText();
-
-        }
-        return companyDetail;
-    }
-
-    //Filter details on manage company page upon option of state and country drop down
-
-    public void selectOptionsFromDropDownOnManageCompany() {
-        driver.findElement(stateDropDownOnManageCompanyPage).click();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(optionFromStateDropDownOnManageCompanyPage).click();
-
-        driver.findElement(countryDropDownOnManageCompanyPage).click();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(optionFromCountryDropDownOnManageCompanyPage).click();
-        driver.findElement(searchButtonOnManageCompanyPage).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
-
-    public String verifyDetailsOfCompany() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        List<WebElement> companyList = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td")));
-        String data = " ";
-        for (WebElement details : companyList) {
-            data = details.getText() + data;
-        }
-        return data;
-
-    }
-
-    //Add company page displays with all details by clicking on add company button on manage company page
-
-    public void clickOnAddCompanyButton() {
-        driver.findElement(addCompanyButtonOnManageCompanyPage).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public String verifyAddCompanyPage() {
-        return driver.findElement(displayedMessageOnAddCompanyPage).getText();
-
-    }
-
-}
 
 
 
