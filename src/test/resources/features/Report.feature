@@ -5,7 +5,7 @@ Feature: Verify Report Module Features
     When User clicks on reports icon on left tool bar
 
   @Sanity
-  Scenario: All hyperlinks with icons on setting page should work
+  Scenario: Report page should open with required sections of report
     Then User will able to see total six section of report category
 
   @Sanity
