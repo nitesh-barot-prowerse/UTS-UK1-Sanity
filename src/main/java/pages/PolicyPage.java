@@ -147,7 +147,7 @@ public class PolicyPage {
             driver.findElement(policyIcon).click();
             Log.info("Click Event On Policy Icon On DashBoard");
         } catch (Exception e) {
-            Log.error("Exception", new Error(e).toString());
+            //Log.error("Exception", new Error(e).toString());
         }
         try {
             Thread.sleep(4000);
