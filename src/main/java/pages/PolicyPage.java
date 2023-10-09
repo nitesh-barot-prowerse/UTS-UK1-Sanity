@@ -202,14 +202,14 @@ public class PolicyPage {
 
             WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
             List<WebElement> totalColumn = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[4]/a")));
-            Log.error("Exception ", new Error().getStackTrace().toString());
+            //Log.error("Exception ", new Error().getStackTrace().toString());
 
             for (WebElement cEle : totalColumn) {
                 try {
                     cEle.click();
                     Log.info("User Clicks On Policy Code On Manage Policy Page");
                 } catch (Exception e) {
-                    Log.error("Exception ", new Error(e).toString());
+                   // Log.error("Exception ", new Error(e).toString());
                 }
                 try {
                     Thread.sleep(3000);
@@ -249,7 +249,7 @@ public class PolicyPage {
                 cEle.click();
                 Log.info("User Clicks On Policy Code On Manage Policy Page");
             } catch (Exception e) {
-                Log.error("Exception ", new Error(e).toString());
+              //  Log.error("Exception ", new Error(e).toString());
             }
             try {
                 Thread.sleep(5000);
@@ -266,7 +266,7 @@ public class PolicyPage {
         }
         catch (Exception e)
         {
-            Log.error("Exception" ,new Error(e).toString());
+            //Log.error("Exception" ,new Error(e).toString());
         }
 
     }
